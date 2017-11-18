@@ -1,0 +1,30 @@
+﻿@model CustomerModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Müşteriler"];
+}
+
+<div class="container">
+  <h3>@Localizer["IMemoryCache ve IDistributedCache Örnek Sayfası"]</h3><br>
+  <p>@Localizer["Müşteriler"]</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>@Localizer["Ad"]</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        @foreach(Customer customer in Model.Customers)
+        {
+          <tr>
+            <td>@customer.Id</td>
+            <td>@customer.Name</td>
+            <td><a href="/customers/@customer.Id">@Localizer["Detay"]</a></td>
+          </tr>
+        }
+    </tbody>
+  </table>
+</div>
