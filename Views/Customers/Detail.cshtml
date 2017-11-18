@@ -1,0 +1,26 @@
+﻿@model Customer
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Müşteri Detayı"];
+}
+
+<div class="container">
+    <h3>@Localizer["IMemoryCache ve IDistributedCache Örnek Sayfası"]</h3><br>
+    <p>@Localizer["Müşteri Detayı"]</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>@Localizer["Ad"]</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.Name</td>
+                </tr>
+        </tbody>
+    </table>
+</div>
